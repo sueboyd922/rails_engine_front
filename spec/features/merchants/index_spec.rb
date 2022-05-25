@@ -8,4 +8,12 @@ RSpec.describe 'merchants index page' do
     expect(page).to have_content("Klein, Rempel and Jones")
     expect(page).to have_content("Willms and Sons")
   end
+
+  it 'links all the merchants to their show page' do
+    visit '/merchants'
+
+    click_on("Schroeder-Jerde")
+    expect(current_path).to eq("/merchants/1")
+    expect(page).to have_content("items")
+  end
 end
