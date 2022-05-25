@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
   def index
-    @merchants = MerchantFacade.all_merchants
+    @merchants = MerchantsFacade.all_merchants
   end
 end
