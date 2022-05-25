@@ -55,8 +55,8 @@ group :development do
 end
 
 group :test do
-  gem 'webmock'
-  gem 'vcr'
+  # gem 'webmock'
+  # gem 'vcr'
   gem 'shoulda-matchers'
   gem 'launchy'
 end

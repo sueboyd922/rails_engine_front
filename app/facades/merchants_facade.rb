@@ -1,0 +1,3 @@
+class MerchantsFacade
+
+end
