@@ -9,7 +9,7 @@ class Item
     @id = data[:id]
     @name = data[:attributes][:name]
     @description = data[:attributes][:description]
-    @unit_price = data[:attributes][:unit_price]
+    @unit_price = data[:attributes][:unit_price].to_f
     @merchant_id = data[:attributes][:merchant_id]
   end
 end
