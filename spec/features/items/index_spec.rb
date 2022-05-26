@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'items index page' do
-  it 'has a list of all the items' do
+  it 'has a list of all the items', :vcr do
     visit "/items"
 
     expect(page).to have_link("Item Nemo Facere")
@@ -9,7 +9,7 @@ RSpec.describe 'items index page' do
     expect(page).to have_link("Item Provident At")
   end
 
-  it 'links to the items show page' do
+  it 'links to the items show page', :vcr do
     visit "/items"
 
     click_on("Item Nemo Facere")
