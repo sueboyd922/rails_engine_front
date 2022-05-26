@@ -1,5 +1,5 @@
 <h1> All Items </h1>
 
 <% @items.each_with_index do |item, index| %>
-  <p> <%= index + 1 %>. <%= item.name %></p>
+  <p> <%= index + 1 %>. <%=link_to "#{item.name}", "/items/#{item.id}" %></p>
   <% end %>
