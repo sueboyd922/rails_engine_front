@@ -9,6 +9,11 @@ class ItemsService
     get_json(response)
   end
 
+  def self.get_one_item(id)
+    response = conn.get("/api/v1/items/#{id}")
+    get_json(response)
+  end
+
   def self.conn
     Faraday.new("http://localhost:3000")
   end

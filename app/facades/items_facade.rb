@@ -12,4 +12,9 @@ class ItemsFacade
       Item.new(item)
     end
   end
+
+  def self.one_item(id)
+    item = ItemsService.get_one_item(id)
+    Item.new(item[:data])
+  end
 end
