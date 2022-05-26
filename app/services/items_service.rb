@@ -1,25 +1,13 @@
-class ItemsService
+class ItemsService < BaseService
   def self.items_for_merchant(id)
-    response = conn.get("/api/v1/merchants/#{id}/items")
-    get_json(response)
+    process("/api/v1/merchants/#{id}/items")
   end
 
   def self.all_items
-    response = conn.get("/api/v1/items")
-    get_json(response)
+    process("/api/v1/items")
   end
 
   def self.get_one_item(id)
-    response = conn.get("/api/v1/items/#{id}")
-    get_json(response)
+    process("/api/v1/items/#{id}")
   end
-
-  def self.conn
-    Faraday.new("http://localhost:3000")
-  end
-
-  def self.get_json(response)
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
 end
