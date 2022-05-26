@@ -9,6 +9,11 @@ class MerchantsService
     get_json(response)
   end
 
+  def self.find_merchants(search)
+    response = conn.get("api/v1/merchants/find_all?name=#{search}")
+    get_json(response)
+  end
+
   def self.conn
     Faraday.new("http://localhost:3000")
   end

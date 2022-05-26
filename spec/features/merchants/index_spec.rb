@@ -19,4 +19,16 @@ RSpec.describe 'merchants index page' do
     expect(page).to have_content("Item Provident At")
     expect(page).not_to have_content("Item Enim Error")
   end
+
+  it 'can search for a merchant by name' do
+    visit '/merchants'
+
+    fill_in :search, with: "will"
+    click_on "Search"
+    expect(current_path).to eq("/merchants")
+
+    expect(page).to have_content("Williamson Group")
+    expect(page).to have_content("Willms and Sons")
+    expect(page).not_to have_content("Bechtelar, Jones and Stokes")
+  end
 end
