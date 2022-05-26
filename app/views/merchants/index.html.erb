@@ -7,6 +7,11 @@
 <%= form.submit "Search" %>
 <% end %>
 
+<% if @merchants.empty? %>
+  <p> Sorry no matches for this search </p>
+<% end %>
+
+
 <% @merchants.each do |merchant| %>
   <p><%= link_to "#{merchant.name}", "/merchants/#{merchant.id}" %></p>
 <% end %>

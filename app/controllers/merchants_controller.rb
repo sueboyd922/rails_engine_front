@@ -2,7 +2,6 @@ class MerchantsController < ApplicationController
   def index
     if params[:search]
       @merchants = MerchantsFacade.find_merchants(params[:search])
-      require "pry"; binding.pry
     else
       @merchants = MerchantsFacade.all_merchants
     end
